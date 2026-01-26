@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>✨ Welcome to the Retro Web ✨</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+        
+        body {
+            background: #fff;
+            font-family: 'VT323', monospace;
+            color: #000;
+            min-height: 100vh;
+            overflow-x: hidden;
+            image-rendering: pixelated;
+            image-rendering: crisp-edges;
+            background-image: 
+                repeating-linear-gradient(0deg, transparent, transparent 19px, #000 19px, #000 20px),
+                repeating-linear-gradient(90deg, transparent, transparent 19px, #000 19px, #000 20px);
+        }
+
+        @keyframes blink {
+            0%, 50%, 100% { opacity: 1; }
+            25%, 75% { opacity: 0; }
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background: #fff;
+            border: 8px solid #000;
+            width: 70%;
+            margin: 40px auto;
+            box-shadow: 10px 10px 0 #f00;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-family: 'VT323', monospace;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            color: #000;
+            text-shadow: 3px 3px 0 #f00;
+        }
+
+        .tagline {
+            font-size: 0.9rem;
+            animation: pulse 2s ease-in-out infinite;
+            color: #000;
+        }
+
+        .star {
+            display: inline-block;
+            margin: 0 10px;
+        }
+
+        .heart-image {
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .heart-image img {
+            max-width: 400px;
+            width: 100%;
+            height: auto;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .heart-image img:hover {
+            transform: scale(1.3);
+        }
+
+        .header-cupid {
+            width: 80px;
+            height: auto;
+            vertical-align: middle;
+            margin: 0 20px;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <img src="cupid1.png" alt="cupid" class="header-cupid">
+            <div>
+                <h1>
+                    <span class="star">♥</span>
+                    MEOW
+                    <span class="star">♥</span>
+                </h1>
+                <p class="tagline">~ for allen ~</p>
+            </div>
+            <img src="cupid1.png" alt="cupid" class="header-cupid">
+        </div>
+    </header>
+
+    <div class="heart-image">
+        <a href="love.html">
+            <img src="heart.png" alt="heart">
+        </a>
+    </div>
+</body>
+</html>
