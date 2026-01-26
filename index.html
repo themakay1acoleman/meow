@@ -16,14 +16,13 @@
         body {
             background: #fff;
             font-family: 'VT323', monospace;
-            color: #000;
-            min-height: 100vh;
             overflow-x: hidden;
             image-rendering: pixelated;
             image-rendering: crisp-edges;
-            background-image: 
+            background-image:
                 repeating-linear-gradient(0deg, transparent, transparent 19px, #000 19px, #000 20px),
                 repeating-linear-gradient(90deg, transparent, transparent 19px, #000 19px, #000 20px);
+            background-size: 20px 20px;
         }
 
         @keyframes blink {
@@ -57,7 +56,7 @@
             letter-spacing: 2px;
             margin-bottom: 20px;
             color: #000;
-            text-shadow: 3px 3px 0 #f00;
+            text-shadow: 3px 3px 0 rgb(132, 132, 132);
         }
 
         .tagline {
@@ -73,7 +72,7 @@
 
         .heart-image {
             text-align: center;
-            margin: 40px 0;
+            margin: 600px 0;
         }
 
         .heart-image img {
@@ -101,6 +100,56 @@
             justify-content: space-between;
             gap: 40px;
         }
+
+        .side-box {
+            background: #fff;
+            border: 8px solid #000;
+            width: 400px;
+            padding: 0;
+            margin: 100px 20px 0 20px;
+            box-shadow: 10px 10px 0 #999;
+            min-height: 250px;
+        }
+
+        .side-box.right-box {
+            position: absolute;
+                top: 550px;
+            left: 410px;
+            margin: 0;
+            z-index: 10;
+        }
+
+        .side-box-nav {
+            background: #000;
+            border-bottom: 2px solid #000;
+            padding: 3px;
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .side-box-nav button {
+            background: #f00;
+            border: 3px solid #000;
+            color: #fff;
+            padding: 8px 15px;
+            font-family: 'VT323', monospace;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 0.7rem;
+            transition: all 0.3s ease;
+        }
+
+        .side-box-nav button:hover {
+            background: #fff;
+            color: #f00;
+            transform: scale(1.1);
+        }
+
+        .side-box-content {
+            padding: 30px 20px 20px 20px;
+            line-height: 2;
+        }
     </style>
 </head>
 <body>
@@ -119,10 +168,44 @@
         </div>
     </header>
 
+    <div class="side-box">
+        <div class="side-box-nav">
+            <button>I</button>
+            <button>LOVE</button>
+            <button>YOU</button>
+        </div>
+        <div class="side-box-content">
+            <p>happy valentine's day boob :3</p>
+            <p>its been about half a year since we started dating <3...</p>
+        </div>
+    </div>
+
+    <div class="side-box right-box">
+        <div class="side-box-nav">
+            <button>Gallery</button>
+            <button>Memories</button>
+            <button>Future</button>
+        </div>
+        <div class="side-box-content">
+            <p>💕 Our story continues... 💕</p>
+        </div>
+    </div>
+
     <div class="heart-image">
         <a href="love.html">
             <img src="heart.png" alt="heart">
         </a>
+    </div>
+
+    <div class="side-box">
+        <div class="side-box-nav">
+            <button>Home</button>
+            <button>About</button>
+            <button>Contact</button>
+        </div>
+        <div class="side-box-content">
+            <p>💖 You made it here! 💖</p>
+        </div>
     </div>
 </body>
 </html>
