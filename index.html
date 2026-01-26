@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>✨ Welcome to the Retro Web ✨</title>
+    <title>dear allen</title>
     <style>
         * {
             margin: 0;
@@ -83,7 +83,7 @@
             cursor: pointer;
         }
 
-        .heart-image img:hover {
+        .heart-image img.heart-hover:hover {
             transform: scale(1.3);
         }
 
@@ -180,32 +180,27 @@
         </div>
     </div>
 
-    <div class="side-box right-box" style="position:absolute;top:520px;left:300px;z-index:10;">
+    <div class="side-box right-box">
         <div class="side-box-nav">
             <button>SO</button>
             <button>SO</button>
             <button>MUCH</button>
         </div>
         <div class="side-box-content">
-            <p>💕 Our story continues... 💕</p>
+            <p>i am so lucky to have met you and to have gotten the chance to get to know you</p>
         </div>
     </div>
 
-    <div class="heart-image">
+    <div class="heart-image" style="position: absolute; top: 400px; right: 10px; margin: 0; text-align: right; display: flex; align-items: flex-end; gap: 32px;">
         <a href="love.html">
-            <img src="heart.png" alt="heart">
+            <img src="heart.png" alt="heart" class="heart-hover" style="max-width: 320px; width: 100%; height: auto; margin-right: 0;">
         </a>
+        <div style="position: relative; display: inline-block; height: 200px; width: 260px; transform: translate(-160px, -170px);">
+            <img src="speechbubble.png" alt="speech bubble" style="height: 200px; width: 100%; display: block;">
+            <span style="position: absolute; top: 50%; left: 50%; transform: translate(-45%, -265%); color: #222; font-size: 0.9rem; font-family: 'VT323', monospace; text-align: center; width: 90%; pointer-events: none; text-shadow: 1px 1px 4px #fff, 0 0 2px #fff;">click me if you dare</span>
+        </div>
     </div>
 
-    <div class="side-box">
-        <div class="side-box-nav">
-            <button>Home</button>
-            <button>About</button>
-            <button>Contact</button>
-        </div>
-        <div class="side-box-content">
-            <p>💖 You made it here! 💖</p>
-        </div>
-    </div>
+    
 </body>
 </html>
