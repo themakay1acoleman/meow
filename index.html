@@ -23,6 +23,7 @@
                 repeating-linear-gradient(0deg, transparent, transparent 19px, #000 19px, #000 20px),
                 repeating-linear-gradient(90deg, transparent, transparent 19px, #000 19px, #000 20px);
             background-size: 20px 20px;
+            position: relative;
         }
 
         @keyframes blink {
@@ -38,6 +39,15 @@
         @keyframes spin {
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
+        }
+
+        .sleepy-hover {
+            cursor: pointer;
+            transition: transform 0.6s ease;
+        }
+
+        .sleepy-hover:hover {
+            animation: spin 3s linear infinite;
         }
 
         header {
@@ -106,7 +116,7 @@
             border: 8px solid #000;
             width: 400px;
             padding: 0;
-            margin: 100px 20px 0 20px;
+            margin: 130px 20px 0 20px;
             box-shadow: 10px 10px 0 #999;
             min-height: 250px;
         }
@@ -206,8 +216,6 @@
             <p>happy valentine's day boob :3</p>
             <p>its been about half a year since we started dating <3...</p>
         </div>
-
-    <img src="sleepy.png" alt="Sleepy" style="position: fixed; bottom: 12px; left: 12px; width: 130px; z-index: 1000; pointer-events: none;" />
     </div>
 
     <div class="side-box right-box">
@@ -224,6 +232,8 @@
         </div>
     </div>
 
+    <img src="sleepy.png" alt="Sleepy" class="sleepy-hover" style="position: absolute; width: 130px; top: 360px; right: 750px; z-index: 5;" />
+
     <div class="heart-image" style="position: absolute; top: 400px; right: 10px; margin: 0; text-align: right; display: flex; align-items: flex-end; gap: 32px;">
         <a href="love.html">
             <img src="heart.png" alt="heart" class="heart-hover" style="max-width: 320px; width: 100%; height: auto; margin-right: 0;">
@@ -236,6 +246,6 @@
 
     <div style="text-align: right; margin-top: 40px; margin-bottom: 40px; margin-right: 20px;">
         <img src="cinamaroll.gif" alt="Cinnamoroll" style="width: 200px; height: auto;">
-    </div>    
+    </div>
 </body>
 </html>
