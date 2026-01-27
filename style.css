@@ -94,7 +94,7 @@ h1 {
     font-size: 3rem;
     font-family: 'VT323', monospace;
     letter-spacing: 2px;
-    margin-bottom: 20px;
+    margin-bottom: 0px;
     color: #f00;
     text-shadow: 3px 3px 0 #000;
 }
@@ -109,9 +109,6 @@ h1 {
     font-size: 0.9rem;
     animation: pulse 2s ease-in-out infinite;
     color: #000;
-    margin: -30px 0 0 0;
-    line-height: 1;
-    padding: 0;
 }
 
 .star {
