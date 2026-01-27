@@ -20,8 +20,8 @@
             image-rendering: pixelated;
             image-rendering: crisp-edges;
             background-image:
-                repeating-linear-gradient(0deg, transparent, transparent 19px, #000 19px, #000 20px),
-                repeating-linear-gradient(90deg, transparent, transparent 19px, #000 19px, #000 20px);
+                repeating-linear-gradient(0deg, transparent, transparent 19px, #999 19px, #999 20px),
+                repeating-linear-gradient(90deg, transparent, transparent 19px, #999 19px, #999 20px);
             background-size: 20px 20px;
             position: relative;
         }
@@ -46,8 +46,8 @@
             transition: transform 0.6s ease;
         }
 
-        .sleepy-hover:hover {
-            animation: spin 3s linear infinite;
+        .sleepy-spin {
+            animation: spin 3s linear 1;
         }
 
         header {
@@ -61,7 +61,7 @@
         }
 
         h1 {
-            font-size: 2.5rem;
+            font-size: 4rem;
             font-family: 'VT323', monospace;
             letter-spacing: 2px;
             margin-bottom: 20px;
@@ -232,7 +232,7 @@
         </div>
     </div>
 
-    <img src="sleepy.png" alt="Sleepy" class="sleepy-hover" style="position: absolute; width: 130px; top: 360px; right: 750px; z-index: 5;" />
+    <img src="sleepy.png" alt="Sleepy" class="sleepy-hover" style="position: absolute; width: 130px; top: 360px; right: 750px; z-index: 5;" onclick="this.classList.remove('sleepy-spin'); void this.offsetWidth; this.classList.add('sleepy-spin');" />
 
     <div class="heart-image" style="position: absolute; top: 400px; right: 10px; margin: 0; text-align: right; display: flex; align-items: flex-end; gap: 32px;">
         <a href="love.html">
