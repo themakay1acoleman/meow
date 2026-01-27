@@ -14,8 +14,8 @@ body {
     image-rendering: pixelated;
     image-rendering: crisp-edges;
     background-image:
-        repeating-linear-gradient(0deg, transparent, transparent 19px, #000 19px, #000 20px),
-        repeating-linear-gradient(90deg, transparent, transparent 19px, #000 19px, #000 20px);
+        repeating-linear-gradient(0deg, transparent, transparent 19px, #999 19px, #999 20px),
+        repeating-linear-gradient(90deg, transparent, transparent 19px, #999 19px, #999 20px);
     background-size: 20px 20px;
     cursor: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABFklEQVRYR9WXURLDIAhE6/0PbSdOtUpcd1Gnpv1KGpTHBpCE1/cXq+vrMph7dGvXZTtpfW10DCA5jrH1H0Jhs5E0hnZdCR+vb5S8Nn8mQCeS9BfSalYJqMBjAGzq59xAESN7VFVUgV8AZB/dZBR7QTFDCqGquvUBVVoEtgIwpQRzmANSFHgWQKExHdIrPeuMvQNDarXe6nC/AutgV3JW+6bgqQLeV8FekRtgV+ToDKEKnACYKsfZjjkam7a0ZpYTytwmgainpC3HvwBocgKOxqRjehoR9DFKNFYtOwCGYCszobeCbl26N6yyQ6g8X/Wex/rBPsNEV6qAMaJPMynIHQCoSqS9JSMmwef51LflTgCRszU7DvAGiV6mHWfsaVUAAAAASUVORK5CYII=), auto;
 }
@@ -43,21 +43,66 @@ button:hover {
 
 header {
     text-align: center;
-    padding: 40px 20px;
-    background: #fff;
-    border: 8px solid #000;
+    padding: 1px;
+    background: #e0e0e0;
+    border: none;
     width: 70%;
     margin: 40px auto;
-    box-shadow: 10px 10px 0 #f00;
+}
+
+.header-inner-box {
+    background: transparent;
+    border: 5px solid #000;
+    border-top-color: #e0e0e0;
+    padding: 30px 40px;
+    position: relative;
+}
+
+.header-inner-box::before {
+    content: 'to my love';
+    position: absolute;
+    top: -33px;
+    left: 20px;
+    background: transparent;
+    padding: 0 3px;
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: #000;
+}
+
+.header-inner-box::after {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    width: 25px;
+    height: 5px;
+    background: #000;
+}
+
+.header-content::after {
+    content: '';
+    position: absolute;
+    top: -35px;
+    right: -45px;
+    width: 810px;
+    height: 5px;
+    background: #000;
 }
 
 h1 {
-    font-size: 2.5rem;
+    font-size: 3rem;
     font-family: 'VT323', monospace;
     letter-spacing: 2px;
     margin-bottom: 20px;
-    color: #000;
-    text-shadow: 3px 3px 0 rgb(132, 132, 132);
+    color: #f00;
+    text-shadow: 3px 3px 0 #000;
+}
+
+.meow-text {
+    display: inline-block;
+    transform: scale(1.3);
+    transform-origin: center;
 }
 
 .tagline {
@@ -68,7 +113,9 @@ h1 {
 
 .star {
     display: inline-block;
-    margin: 0 10px;
+    margin: 0 25px;
+    transform: translateY(3px) scale(0.8);
+    text-shadow: 3px 3px 0 #000 !important;
 }
 
 .heart-image {
@@ -107,6 +154,7 @@ h1 {
     align-items: center;
     justify-content: space-between;
     gap: 40px;
+    position: relative;
 }
 
 .side-box {
@@ -173,11 +221,11 @@ h1 {
     background: #666;
     border: 1px solid #000;
     color: #fff;
-    padding: 4px 10px;
+    padding: 3px 8px;
     font-family: 'VT323', monospace;
     font-weight: bold;
     cursor: inherit;
-    font-size: 0.7rem;
+    font-size: 0.6rem;
     transition: all 0.3s ease;
     flex: 1;
 }
