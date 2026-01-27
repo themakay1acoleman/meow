@@ -118,8 +118,8 @@ h1 {
 }
 
 .side-box-nav {
-    background: #000;
-    border-bottom: 2px solid #000;
+    background: #f00;
+    border: 2px solid #000;
     padding: 1px 0;
     display: flex;
     gap: 8px;

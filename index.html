@@ -121,29 +121,54 @@
 
         .side-box-nav {
             background: #000;
-            border-bottom: 2px solid #000;
-            padding: 3px;
+            border-top: 5px solid #000;
+            border-bottom: 3px solid #000;
+            padding: 1px 0 2px 0;
             display: flex;
-            gap: 10px;
-            justify-content: center;
+            flex-direction: column;
+            gap: 3px;
+            align-items: center;
+        }
+
+        .side-box-nav-title {
+            background: #666;
+            border: 1px solid #000;
+            border-radius: 20px;
+            color: #fff;
+            padding: 2px 45px;
+            font-family: 'VT323', monospace;
+            font-weight: bold;
+            font-size: 0.75rem;
+            text-align: center;
+            width: auto;
+            margin-top: -6px;
+        }
+
+        .side-box-nav-buttons {
+            display: flex;
+            gap: 0px;
+            justify-content: flex-start;
+            width: 100%;
         }
 
         .side-box-nav button {
-            background: #f00;
-            border: 3px solid #000;
+            background: #666;
+            border: 1px solid #000;
+            border-radius: 0;
             color: #fff;
-            padding: 8px 15px;
+            padding: 4px 16px;
             font-family: 'VT323', monospace;
             font-weight: bold;
             cursor: pointer;
-            font-size: 0.7rem;
+            font-size: 0.6rem;
             transition: all 0.3s ease;
+            flex: 1;
         }
 
         .side-box-nav button:hover {
-            background: #fff;
-            color: #f00;
-            transform: scale(1.1);
+            background: #f00;
+            color: #fff;
+            transform: translateY(-2px);
         }
 
         .side-box-content {
@@ -159,7 +184,7 @@
             <div>
                 <h1>
                     <span class="star">♥</span>
-                    MEOW
+                    M E O W
                     <span class="star">♥</span>
                 </h1>
                 <p class="tagline">~ for allen ~</p>
@@ -170,21 +195,29 @@
 
     <div class="side-box">
         <div class="side-box-nav">
-            <button>I</button>
-            <button>LOVE</button>
-            <button>YOU</button>
+            <div class="side-box-nav-title">dear allen...</div>
+            <div class="side-box-nav-buttons">
+                <button>I</button>
+                <button>LOVE</button>
+                <button>YOU</button>
+            </div>
         </div>
         <div class="side-box-content">
             <p>happy valentine's day boob :3</p>
             <p>its been about half a year since we started dating <3...</p>
         </div>
+
+    <img src="sleepy.png" alt="Sleepy" style="position: fixed; bottom: 12px; left: 12px; width: 130px; z-index: 1000; pointer-events: none;" />
     </div>
 
     <div class="side-box right-box">
         <div class="side-box-nav">
-            <button>SO</button>
-            <button>SO</button>
-            <button>MUCH</button>
+            <div class="side-box-nav-title">dear allen...</div>
+            <div class="side-box-nav-buttons">
+                <button>SO</button>
+                <button>SO</button>
+                <button>MUCH</button>
+            </div>
         </div>
         <div class="side-box-content">
             <p>i am so lucky to have met you and to have gotten the chance to get to know you</p>
@@ -201,6 +234,8 @@
         </div>
     </div>
 
-    
+    <div style="text-align: right; margin-top: 40px; margin-bottom: 40px; margin-right: 20px;">
+        <img src="cinamaroll.gif" alt="Cinnamoroll" style="width: 200px; height: auto;">
+    </div>    
 </body>
 </html>
