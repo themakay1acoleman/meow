@@ -109,6 +109,7 @@ h1 {
     font-size: 0.9rem;
     animation: pulse 2s ease-in-out infinite;
     color: #000;
+    margin-top: -15px;
 }
 
 .star {
