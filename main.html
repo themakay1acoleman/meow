@@ -57,10 +57,19 @@
 
     <img src="sleepy.png" alt="Sleepy" class="sleepy-hover" style="position: absolute; width: 130px; top: 420px; right: 750px; z-index: 5; filter: drop-shadow(3px 3px 0 #999);" onclick="this.classList.remove('sleepy-spin'); void this.offsetWidth; this.classList.add('sleepy-spin');" />
 
-    <div style="position: absolute; top: 270px; right: 280px; width: 370px; min-height: 400px; background: #ffe6f0; border: 4px solid #000; border-top: 8px solid #000; border-radius: 15px; box-shadow: 10px 10px 0 #bbb; padding: 20px;">
-        <div style="padding: 0px 10px; line-height: 2; font-family: 'VT323', monospace; margin-top: -5px;">
-            <p style="font-weight: bold; font-size: 1.35rem; margin: 0 0 10px 0;">Important!!</p>
-            <p style="margin: 0; font-size: 1.05rem;">I made this site to wish you a happy valentine's day and tell you how much i love you. this was the reason i initially asked you to teach me about python, only to realize i don't need it ;-; but this is the website i've been complaining about so much and now you see why i couldn't show it to you. i hope its not too bad and you can see how hard i tried! Try clicking anything and everything on this page to see what happens. Once you've done that, you should scroll down and see what you find:3</p>
+    <div class="message-box-container" style="position: absolute; top: 270px; right: 280px; width: 370px; min-height: 400px;" onclick="this.classList.toggle('flipped');">
+        <div class="message-box-inner">
+            <div class="message-box-front">
+                <div style="padding: 0px 10px; line-height: 2; font-family: 'VT323', monospace; margin-top: -5px;">
+                    <p style="font-weight: bold; font-size: 1.35rem; margin: 0 0 10px 0;">Important!!</p>
+                    <p style="margin: 0; font-size: 1.05rem;">I made this site to wish you a happy valentine's day and tell you how much i love you. this was the reason i initially asked you to teach me about python, only to realize i don't need it ;-; but this is the website i've been complaining about so much and now you see why i couldn't show it to you. i hope its not too bad and you can see how hard i tried! Try clicking anything and everything on this page to see what happens. Once you've done that, you should scroll down and see what you find:3</p>
+                </div>
+            </div>
+            <div class="message-box-back">
+                <div style="padding: 0px 10px; line-height: 2; font-family: 'VT323', monospace; margin-top: -5px; overflow: hidden; min-height: 450px;">
+                    <p style="margin: 0; font-size: 1.15rem;">omg you found me meow meow! idk what to do now. you can exchange this for a hug, a kiss, head (and i use that word loosely bc ik i use a combination of mouth and hands), or candy</p>
+                </div>
+            </div>
         </div>
     </div>
 
