@@ -153,6 +153,7 @@ h1 {
     height: auto;
     vertical-align: middle;
     margin: 0 20px;
+    filter: drop-shadow(3px 3px 0 #ffb6c1);
 }
 
 .header-content {
@@ -170,7 +171,7 @@ h1 {
     width: 400px;
     padding: 0;
     margin: 100px 20px 0 20px;
-    box-shadow: 10px 10px 0 #999;
+    box-shadow: 10px 10px 0 #bbb;
     min-height: 250px;
 }
 
