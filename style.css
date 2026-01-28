@@ -53,7 +53,7 @@ header {
 
 .to-my-love {
     position: absolute;
-    top: -25px;
+    top: -22px;
     left: 35px;
     transform: translateX(0);
     font-size: 2.2rem;
@@ -113,7 +113,7 @@ h1 {
     color: #000;
     position: absolute;
     bottom: -20px;
-    left: 45%;
+    left: 47%;
     transform: translateX(-50%);
 }
 
