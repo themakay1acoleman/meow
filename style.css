@@ -300,3 +300,123 @@ h1 {
 .sleepy-spin {
     animation: spin 1.5s ease-in-out;
 }
+/* Mobile responsive styles */
+@media (max-width: 768px) {
+    body {
+        background-size: 10px 10px;
+    }
+
+    header {
+        width: 90%;
+        margin: 40px auto 30px auto;
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .meow-text {
+        font-size: 2rem !important;
+        transform: scale(1.2) translateY(-6px) !important;
+    }
+
+    .to-my-love {
+        font-size: 1.5rem;
+        top: -15px;
+        left: 20px;
+    }
+
+    .tagline {
+        font-size: 1rem;
+        bottom: -15px;
+    }
+
+    .star {
+        transform: translateY(-6px) scale(0.7);
+    }
+
+    .header-cupid {
+        width: 50px !important;
+    }
+
+    .side-box {
+        position: relative !important;
+        width: 90% !important;
+        margin: 20px auto !important;
+        left: auto !important;
+        right: auto !important;
+        top: auto !important;
+    }
+
+    .side-box-content {
+        font-size: 1rem;
+        padding: 20px 15px;
+    }
+
+    .side-box-nav-title {
+        font-size: 0.9rem;
+    }
+
+    .side-box-nav button {
+        font-size: 0.9rem !important;
+    }
+
+    /* Message box - make responsive */
+    div[style*="position: absolute"][style*="background: #ffe6f0"] {
+        position: relative !important;
+        width: 90% !important;
+        margin: 20px auto !important;
+        left: auto !important;
+        right: auto !important;
+        top: auto !important;
+        min-height: auto !important;
+    }
+
+    /* Kitty gif - hide or reposition on mobile */
+    img[src="kitty2.gif"] {
+        position: relative !important;
+        display: block;
+        margin: 20px auto !important;
+        left: auto !important;
+        right: auto !important;
+        top: auto !important;
+        width: 80px !important;
+    }
+
+    /* Sleepy.png - reposition for mobile */
+    img[src="sleepy.png"] {
+        position: relative !important;
+        display: block;
+        margin: 20px auto !important;
+        left: auto !important;
+        right: auto !important;
+        top: auto !important;
+        width: 100px !important;
+    }
+
+    /* Heart image section */
+    .heart-image {
+        position: relative !important;
+        bottom: auto !important;
+        left: auto !important;
+        transform: none !important;
+        margin: 40px auto !important;
+        flex-direction: column !important;
+        gap: 20px !important;
+    }
+
+    .heart-image img[src="heart.png"] {
+        max-width: 300px !important;
+    }
+
+    .heart-image > div {
+        transform: none !important;
+        width: 200px !important;
+        height: 150px !important;
+    }
+
+    .heart-image > div img {
+        height: 150px !important;
+    }
+}
