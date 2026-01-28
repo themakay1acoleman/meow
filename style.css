@@ -273,6 +273,7 @@ h1 {
 .side-box-content {
     padding: 30px 20px 20px 20px;
     line-height: 2;
+    font-size: 1.1rem;
 }
 
 .navbar {
@@ -285,4 +286,17 @@ h1 {
   color: rgb(4, 3, 3);
   text-decoration: none;
   margin-right: 1rem;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.sleepy-spin {
+    animation: spin 1.5s ease-in-out;
 }
