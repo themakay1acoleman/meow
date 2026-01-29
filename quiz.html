@@ -104,7 +104,7 @@
             <h2>Question 1</h2>
             <div class="quiz-content">
                 <p>What is makayla's favorite color?</p>
-                <textarea id="free-response-2" rows="1" style="width: 60%; font-size: 0.95rem; font-family: 'VT323', monospace; border: 2px solid #000; border-radius: 8px; margin-top: 10px; padding: 4px; resize: vertical;" placeholder="Type your answer here..."></textarea>
+                <textarea id="free-response-2" rows="1" style="width: 120px; font-size: 0.95rem; font-family: 'VT323', monospace; border: 2px solid #000; border-radius: 8px; margin-top: 10px; padding: 4px; resize: vertical;" placeholder="Type your answer here..."></textarea>
                 <button id="check-answer-2" class="quiz-button" style="margin-top: 10px;">Check Answer</button>
                 <div id="answer-feedback-2" style="margin-top: 10px; font-size: 1.1rem;"></div>
             </div>
@@ -123,17 +123,24 @@
 
         <!-- Page 4 -->
         <div class="quiz-page" data-page="4">
-            <h2>Page 4</h2>
+            <h2>Question 3</h2>
             <div class="quiz-content">
-                <p>Add your content here for page 4.</p>
+                <p>Who is Makayla's favorite person ever?</p>
+                <button id="cardan-btn" class="quiz-button" style="margin-right: 16px;">cardan greenbriar</button>
+                <button id="allen-btn" class="quiz-button" style="margin-right: 16px;">allen jue</button>
+                <button id="jimin-btn" class="quiz-button">jimin from bts</button>
+                <div id="answer-feedback-4" style="margin-top: 10px; font-size: 1.1rem;"></div>
             </div>
         </div>
 
         <!-- Page 5 -->
         <div class="quiz-page" data-page="5">
-            <h2>Page 5</h2>
+            <h2>Question 4</h2>
             <div class="quiz-content">
-                <p>Add your content here for page 5.</p>
+                <p>What day of the month is our anniversery?</p>
+                <input id="free-response-5" type="text" style="width: 120px; font-size: 1rem; font-family: 'VT323', monospace; border: 2px solid #000; border-radius: 8px; margin-top: 10px; padding: 4px; text-align: center;" placeholder="type answer here">
+                <button id="check-answer-5" class="quiz-button" style="margin-left: 10px;">Check Answer</button>
+                <div id="answer-feedback-5" style="margin-top: 10px; font-size: 1.1rem;"></div>
             </div>
         </div>
 
@@ -202,68 +209,11 @@
         </div>
     </div>
 
-    <a href="index.html" style="display: inline-block; margin-top: 40px; margin-left: 80px; margin-bottom: 40px; padding: 10px 20px; border: 4px solid #000; background: #fff; font-size: 1rem; text-decoration: none; color: #000;">← Back</a>
+    <a href="main.html" style="display: inline-block; margin-top: 40px; margin-left: 80px; margin-bottom: 40px; padding: 10px 20px; border: 4px solid #000; background: #fff; font-size: 1rem; text-decoration: none; color: #000;">← Back</a>
 
     <script>
-        // Free response answer for page 2
-        const correctAnswer2 = ["blue", "Blue", "baby blue", "light blue", "Light Blue", "dark blue", "Dark Blue"];
-        document.addEventListener('DOMContentLoaded', function() {
-            // Page 2 logic
-            const checkBtn = document.getElementById('check-answer-2');
-            const nextBtn = document.getElementById('nextBtn');
-            const freeResponse = document.getElementById('free-response-2');
-            if (nextBtn && currentPageNum === 2) nextBtn.style.display = 'none';
-            function validateAnswer() {
-                const userInput = freeResponse.value.trim().toLowerCase();
-                const feedback = document.getElementById('answer-feedback-2');
-                if (correctAnswer2.map(a => a.toLowerCase()).includes(userInput)) {
-                    feedback.textContent = 'Correct! 🎉';
-                    feedback.style.color = '#28a745';
-                    if (nextBtn && currentPageNum === 2) nextBtn.style.display = '';
-                } else {
-                    feedback.textContent = 'Try again!';
-                    feedback.style.color = '#d00';
-                    if (nextBtn && currentPageNum === 2) nextBtn.style.display = 'none';
-                }
-            }
-            if (checkBtn) {
-                checkBtn.addEventListener('click', validateAnswer);
-            }
-            if (freeResponse) {
-                freeResponse.addEventListener('input', function() {
-                    const userInput = freeResponse.value.trim().toLowerCase();
-                    if (!correctAnswer2.map(a => a.toLowerCase()).includes(userInput) && nextBtn && currentPageNum === 2) {
-                        nextBtn.style.display = 'none';
-                    }
-                });
-            }
-
-            // Page 3 logic
-            const macBtn = document.getElementById('mac-btn');
-            const burgersBtn = document.getElementById('burgers-btn');
-            const feedback3 = document.getElementById('answer-feedback-3');
-            function setNextBtnPage3(show) {
-                if (nextBtn && currentPageNum === 3) {
-                    nextBtn.style.display = show ? '' : 'none';
-                }
-            }
-            if (nextBtn && currentPageNum === 3) nextBtn.style.display = 'none';
-            if (macBtn && burgersBtn && feedback3) {
-                macBtn.addEventListener('click', function() {
-                    feedback3.textContent = 'Correct! 🎉';
-                    feedback3.style.color = '#28a745';
-                    setNextBtnPage3(true);
-                });
-                burgersBtn.addEventListener('click', function() {
-                    feedback3.textContent = 'Try again!';
-                    feedback3.style.color = '#d00';
-                    setNextBtnPage3(false);
-                });
-            }
-        });
         let currentPageNum = 1;
         const totalPages = 12;
-
 
         // Typewriter effect for page 1 (header and text)
         const typewriterHeader = "Hello Hello Hello";
@@ -315,22 +265,17 @@
             document.getElementById('prevBtn').disabled = pageNum === 1;
             document.getElementById('nextBtn').disabled = pageNum === totalPages;
 
-                // Show/hide next button for page 2 only
-                const nextBtn = document.getElementById('nextBtn');
-                if (nextBtn) {
-                    if (pageNum === 1) {
-                        nextBtn.style.display = '';
-                    } else if (pageNum === 2) {
-                        // Hide by default, will show if answer is correct
-                        nextBtn.style.display = 'none';
-                    } else if (pageNum === totalPages) {
-                        // Hide next button on last page
-                        nextBtn.style.display = 'none';
-                    } else {
-                        // Show next button on all other pages
-                        nextBtn.style.display = '';
-                    }
+            // Hide Next button by default on pages 2-11
+            const nextBtn = document.getElementById('nextBtn');
+            if (nextBtn) {
+                if (pageNum === 1) {
+                    nextBtn.style.display = '';
+                } else if (pageNum >= 2 && pageNum <= 11) {
+                    nextBtn.style.display = 'none';
+                } else {
+                    nextBtn.style.display = '';
                 }
+            }
 
             // Typewriter effect only on page 1
             if (pageNum === 1) {
@@ -353,6 +298,102 @@
 
         // Initialize
         showPage(1);
+
+        // Page 2 logic
+        const checkBtn = document.getElementById('check-answer-2');
+        const freeResponse = document.getElementById('free-response-2');
+        if (checkBtn && freeResponse) {
+            checkBtn.addEventListener('click', function() {
+                const userInput = freeResponse.value.trim().toLowerCase();
+                const feedback = document.getElementById('answer-feedback-2');
+                const nextBtn = document.getElementById('nextBtn');
+                if (["blue", "baby blue", "light blue", "dark blue"].includes(userInput)) {
+                    feedback.textContent = 'Correct! 🎉';
+                    feedback.style.color = '#28a745';
+                    if (nextBtn && currentPageNum === 2) nextBtn.style.display = '';
+                } else {
+                    feedback.textContent = 'Try again!';
+                    feedback.style.color = '#d00';
+                    if (nextBtn && currentPageNum === 2) nextBtn.style.display = 'none';
+                }
+            });
+            freeResponse.addEventListener('input', function() {
+                const userInput = freeResponse.value.trim().toLowerCase();
+                const nextBtn = document.getElementById('nextBtn');
+                if (!["blue", "baby blue", "light blue", "dark blue"].includes(userInput) && nextBtn && currentPageNum === 2) {
+                    nextBtn.style.display = 'none';
+                }
+            });
+        }
+
+        // Page 3 logic
+        const macBtn = document.getElementById('mac-btn');
+        const burgersBtn = document.getElementById('burgers-btn');
+        const feedback3 = document.getElementById('answer-feedback-3');
+        if (macBtn && burgersBtn && feedback3) {
+            macBtn.addEventListener('click', function() {
+                feedback3.textContent = 'Correct! 🎉';
+                feedback3.style.color = '#28a745';
+                const nextBtn = document.getElementById('nextBtn');
+                if (nextBtn && currentPageNum === 3) nextBtn.style.display = '';
+            });
+            burgersBtn.addEventListener('click', function() {
+                feedback3.textContent = 'Try again!';
+                feedback3.style.color = '#d00';
+                const nextBtn = document.getElementById('nextBtn');
+                if (nextBtn && currentPageNum === 3) nextBtn.style.display = 'none';
+            });
+        }
+
+        // Page 4 logic
+        const cardanBtn = document.getElementById('cardan-btn');
+        const allenBtn = document.getElementById('allen-btn');
+        const jiminBtn = document.getElementById('jimin-btn');
+        const feedback4 = document.getElementById('answer-feedback-4');
+        if (cardanBtn && allenBtn && jiminBtn && feedback4) {
+            cardanBtn.addEventListener('click', function() {
+                feedback4.textContent = 'Try again!';
+                feedback4.style.color = '#d00';
+                const nextBtn = document.getElementById('nextBtn');
+                if (nextBtn && currentPageNum === 4) nextBtn.style.display = 'none';
+            });
+            jiminBtn.addEventListener('click', function() {
+                feedback4.textContent = 'Try again!';
+                feedback4.style.color = '#d00';
+                const nextBtn = document.getElementById('nextBtn');
+                if (nextBtn && currentPageNum === 4) nextBtn.style.display = 'none';
+            });
+            allenBtn.addEventListener('click', function() {
+                feedback4.textContent = 'Correct! 🎉';
+                feedback4.style.color = '#28a745';
+                const nextBtn = document.getElementById('nextBtn');
+                if (nextBtn && currentPageNum === 4) nextBtn.style.display = '';
+            });
+        }
+
+        // Page 5 logic
+        const checkBtn5 = document.getElementById('check-answer-5');
+        const freeResponse5 = document.getElementById('free-response-5');
+        const feedback5 = document.getElementById('answer-feedback-5');
+        if (checkBtn5 && freeResponse5 && feedback5) {
+            checkBtn5.addEventListener('click', function() {
+                const userInput = freeResponse5.value.trim();
+                const nextBtn = document.getElementById('nextBtn');
+                if (userInput === '17', 'seventeen', 'Seventeen', '17th', 'the seventeenth', 'the 17th') {
+                    feedback5.textContent = 'Correct! 🎉';
+                    feedback5.style.color = '#28a745';
+                    if (nextBtn && currentPageNum === 5) nextBtn.style.display = '';
+                } else {
+                    feedback5.textContent = 'Try again!';
+                    feedback5.style.color = '#d00';
+                    if (nextBtn && currentPageNum === 5) nextBtn.style.display = 'none';
+                }
+            });
+            freeResponse5.addEventListener('input', function() {
+                const nextBtn = document.getElementById('nextBtn');
+                if (nextBtn && currentPageNum === 5) nextBtn.style.display = 'none';
+            });
+        }
     </script>
 </body>
 </html>
