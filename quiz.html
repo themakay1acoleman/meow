@@ -92,25 +92,21 @@
     <div class="quiz-container">
         <!-- Page 1 -->
         <div class="quiz-page active" data-page="1">
-            <h2>Page 1</h2>
+            <div id="typewriter-header"></div>
             <div class="quiz-content">
-                <p>Add your content here for page 1.</p>
+                <div id="typewriter-text"></div>
             </div>
         </div>
 
         <!-- Page 2 -->
-        <div class="quiz-page" data-page="2">
-            <h2>Page 2</h2>
-            <div class="quiz-content">
-                <p>Add your content here for page 2.</p>
-            </div>
-        </div>
 
-        <!-- Page 3 -->
-        <div class="quiz-page" data-page="3">
-            <h2>Page 3</h2>
+        <div class="quiz-page" data-page="2">
+            <h2>Question 1</h2>
             <div class="quiz-content">
-                <p>Add your content here for page 3.</p>
+                <p>What is makayla's favorite color?</p>
+                <textarea id="free-response-2" rows="1" style="width: 60%; font-size: 0.95rem; font-family: 'VT323', monospace; border: 2px solid #000; border-radius: 8px; margin-top: 10px; padding: 4px; resize: vertical;" placeholder="Type your answer here..."></textarea>
+                <button id="check-answer-2" class="quiz-button" style="margin-top: 10px;">Check Answer</button>
+                <div id="answer-feedback-2" style="margin-top: 10px; font-size: 1.1rem;"></div>
             </div>
         </div>
 
@@ -191,15 +187,82 @@
             <span class="page-indicator">
                 Page <span id="currentPage">1</span> of 12
             </span>
-            <button class="quiz-button" id="nextBtn" onclick="changePage(1)">Next →</button>
+            <button class="quiz-button" id="nextBtn" onclick="changePage(1)" style="display: none;">Next →</button>
         </div>
     </div>
 
     <a href="index.html" style="display: inline-block; margin-top: 40px; margin-left: 80px; margin-bottom: 40px; padding: 10px 20px; border: 4px solid #000; background: #fff; font-size: 1rem; text-decoration: none; color: #000;">← Back</a>
 
     <script>
+        // Free response answer for page 2
+        const correctAnswer2 = ["blue", "Blue", "baby blue", "light blue", "Light Blue", "dark blue", "Dark Blue"];
+        document.addEventListener('DOMContentLoaded', function() {
+            const checkBtn = document.getElementById('check-answer-2');
+            const nextBtn = document.getElementById('nextBtn');
+            const freeResponse = document.getElementById('free-response-2');
+            // Only hide nextBtn by default if on page 2
+            if (nextBtn && currentPageNum === 2) nextBtn.style.display = 'none';
+            function validateAnswer() {
+                const userInput = freeResponse.value.trim().toLowerCase();
+                const feedback = document.getElementById('answer-feedback-2');
+                if (correctAnswer2.map(a => a.toLowerCase()).includes(userInput)) {
+                    feedback.textContent = 'Correct! 🎉';
+                    feedback.style.color = '#28a745';
+                    if (nextBtn && currentPageNum === 2) nextBtn.style.display = '';
+                } else {
+                    feedback.textContent = 'Try again!';
+                    feedback.style.color = '#d00';
+                    if (nextBtn && currentPageNum === 2) nextBtn.style.display = 'none';
+                }
+            }
+            if (checkBtn) {
+                checkBtn.addEventListener('click', validateAnswer);
+            }
+            if (freeResponse) {
+                freeResponse.addEventListener('input', function() {
+                    // Hide next button if answer is changed to incorrect
+                    const userInput = freeResponse.value.trim().toLowerCase();
+                    if (!correctAnswer2.map(a => a.toLowerCase()).includes(userInput) && nextBtn && currentPageNum === 2) {
+                        nextBtn.style.display = 'none';
+                    }
+                });
+            }
+        });
         let currentPageNum = 1;
         const totalPages = 12;
+
+
+        // Typewriter effect for page 1 (header and text)
+        const typewriterHeader = "Hello Hello Hello";
+        const typewriterLines = [
+            "Let’s play a quick little game before I let you go.",
+            "I promise it’ll be fun!!",
+            "For me at least... :)"
+        ];
+
+        const typewriterDelay = 25; // ms per character for text
+        const typewriterHeaderDelay = 70; // ms per character for header
+        const typewriterLineDelay = 500; // ms between lines
+
+        function typeTextLine(line, container, tag, cb, delay = typewriterDelay) {
+            let i = 0;
+            const el = document.createElement(tag);
+            container.appendChild(el);
+            function typeChar() {
+                if (i < line.length) {
+                    el.textContent += line[i++];
+                    setTimeout(typeChar, delay);
+                } else if (cb) {
+                    cb();
+                }
+            }
+            typeChar();
+        }
+
+        function typeText(lines, container, lineIdx = 0) {
+            if (lineIdx >= lines.length) return;
+            typeTextLine(lines[lineIdx], container, 'p', () => setTimeout(() => typeText(lines, container, lineIdx + 1), typewriterLineDelay));
+        }
 
         function showPage(pageNum) {
             // Hide all pages
@@ -218,6 +281,32 @@
             // Update button states
             document.getElementById('prevBtn').disabled = pageNum === 1;
             document.getElementById('nextBtn').disabled = pageNum === totalPages;
+
+            // Show/hide next button for page 2 only
+            const nextBtn = document.getElementById('nextBtn');
+            if (nextBtn) {
+                if (pageNum === 2) {
+                    // Hide by default, will show if answer is correct
+                    nextBtn.style.display = 'none';
+                } else if (pageNum === totalPages) {
+                    // Hide next button on last page
+                    nextBtn.style.display = 'none';
+                } else {
+                    // Show next button on all other pages (including page 1)
+                    nextBtn.style.display = '';
+                }
+            }
+
+            // Typewriter effect only on page 1
+            if (pageNum === 1) {
+                const tw = document.getElementById('typewriter-text');
+                const th = document.getElementById('typewriter-header');
+                if (tw && th) {
+                    tw.innerHTML = '';
+                    th.innerHTML = '';
+                    typeTextLine(typewriterHeader, th, 'h2', () => typeText(typewriterLines, tw), typewriterHeaderDelay);
+                }
+            }
         }
 
         function changePage(direction) {
