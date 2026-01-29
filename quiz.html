@@ -110,6 +110,17 @@
             </div>
         </div>
 
+        <!-- Page 3 -->
+        <div class="quiz-page" data-page="3">
+            <h2>Question 2</h2>
+            <div class="quiz-content">
+                <p>What is Makayla's favorite food?</p>
+                <button id="mac-btn" class="quiz-button" style="margin-right: 16px;">mac and cheese</button>
+                <button id="burgers-btn" class="quiz-button">burgers</button>
+                <div id="answer-feedback-3" style="margin-top: 10px; font-size: 1.1rem;"></div>
+            </div>
+        </div>
+
         <!-- Page 4 -->
         <div class="quiz-page" data-page="4">
             <h2>Page 4</h2>
@@ -197,10 +208,10 @@
         // Free response answer for page 2
         const correctAnswer2 = ["blue", "Blue", "baby blue", "light blue", "Light Blue", "dark blue", "Dark Blue"];
         document.addEventListener('DOMContentLoaded', function() {
+            // Page 2 logic
             const checkBtn = document.getElementById('check-answer-2');
             const nextBtn = document.getElementById('nextBtn');
             const freeResponse = document.getElementById('free-response-2');
-            // Only hide nextBtn by default if on page 2
             if (nextBtn && currentPageNum === 2) nextBtn.style.display = 'none';
             function validateAnswer() {
                 const userInput = freeResponse.value.trim().toLowerCase();
@@ -220,11 +231,33 @@
             }
             if (freeResponse) {
                 freeResponse.addEventListener('input', function() {
-                    // Hide next button if answer is changed to incorrect
                     const userInput = freeResponse.value.trim().toLowerCase();
                     if (!correctAnswer2.map(a => a.toLowerCase()).includes(userInput) && nextBtn && currentPageNum === 2) {
                         nextBtn.style.display = 'none';
                     }
+                });
+            }
+
+            // Page 3 logic
+            const macBtn = document.getElementById('mac-btn');
+            const burgersBtn = document.getElementById('burgers-btn');
+            const feedback3 = document.getElementById('answer-feedback-3');
+            function setNextBtnPage3(show) {
+                if (nextBtn && currentPageNum === 3) {
+                    nextBtn.style.display = show ? '' : 'none';
+                }
+            }
+            if (nextBtn && currentPageNum === 3) nextBtn.style.display = 'none';
+            if (macBtn && burgersBtn && feedback3) {
+                macBtn.addEventListener('click', function() {
+                    feedback3.textContent = 'Correct! 🎉';
+                    feedback3.style.color = '#28a745';
+                    setNextBtnPage3(true);
+                });
+                burgersBtn.addEventListener('click', function() {
+                    feedback3.textContent = 'Try again!';
+                    feedback3.style.color = '#d00';
+                    setNextBtnPage3(false);
                 });
             }
         });
@@ -282,20 +315,22 @@
             document.getElementById('prevBtn').disabled = pageNum === 1;
             document.getElementById('nextBtn').disabled = pageNum === totalPages;
 
-            // Show/hide next button for page 2 only
-            const nextBtn = document.getElementById('nextBtn');
-            if (nextBtn) {
-                if (pageNum === 2) {
-                    // Hide by default, will show if answer is correct
-                    nextBtn.style.display = 'none';
-                } else if (pageNum === totalPages) {
-                    // Hide next button on last page
-                    nextBtn.style.display = 'none';
-                } else {
-                    // Show next button on all other pages (including page 1)
-                    nextBtn.style.display = '';
+                // Show/hide next button for page 2 only
+                const nextBtn = document.getElementById('nextBtn');
+                if (nextBtn) {
+                    if (pageNum === 1) {
+                        nextBtn.style.display = '';
+                    } else if (pageNum === 2) {
+                        // Hide by default, will show if answer is correct
+                        nextBtn.style.display = 'none';
+                    } else if (pageNum === totalPages) {
+                        // Hide next button on last page
+                        nextBtn.style.display = 'none';
+                    } else {
+                        // Show next button on all other pages
+                        nextBtn.style.display = '';
+                    }
                 }
-            }
 
             // Typewriter effect only on page 1
             if (pageNum === 1) {
