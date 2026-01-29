@@ -108,11 +108,11 @@ h1 {
 }
 
 .tagline {
-    font-size: 0.9rem;
+    font-size: 1.1rem;
     animation: pulse 2s ease-in-out infinite;
     color: #000;
     position: absolute;
-    bottom: -20px;
+    bottom: -15px;
     left: 47%;
     transform: translateX(-50%);
 }

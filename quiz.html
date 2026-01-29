@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz for Allen</title>
+    <link rel="stylesheet" href="./node_modules/nes.css/css/nes.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .quiz-container {
+            max-width: 800px;
+            margin: 50px auto;
+            background: #fff;
+            border: 4px solid #000;
+            padding: 40px;
+            box-shadow: 10px 10px 0 #999;
+        }
+
+        .quiz-page {
+            display: none;
+        }
+
+        .quiz-page.active {
+            display: block;
+        }
+
+        .quiz-content {
+            min-height: 300px;
+            margin-bottom: 30px;
+            font-size: 1.2rem;
+            line-height: 1.8;
+        }
+
+        .quiz-navigation {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 30px;
+        }
+
+        .quiz-button {
+            padding: 10px 20px;
+            border: 4px solid #000;
+            background: #fff;
+            font-size: 1rem;
+            font-family: 'VT323', monospace;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .quiz-button:hover {
+            background: #ffb6c1;
+        }
+
+        .quiz-button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .page-indicator {
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #f00;
+            text-shadow: 2px 2px 0 #000;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <span class="to-my-love">to my love</span>
+        <div class="header-inner-box">
+            <div class="header-content">
+                <img src="cupid1.png" alt="cupid" class="header-cupid">
+                <div>
+                    <h1>
+                        <span class="star">♥</span>
+                        <span class="meow-text">Q U I Z</span>
+                        <span class="star">♥</span>
+                    </h1>
+                    <p class="tagline">~ for allen ~</p>
+                </div>
+                <img src="cupid1.png" alt="cupid" class="header-cupid">
+            </div>
+        </div>
+    </header>
+
+    <div class="quiz-container">
+        <!-- Page 1 -->
+        <div class="quiz-page active" data-page="1">
+            <h2>Page 1</h2>
+            <div class="quiz-content">
+                <p>Add your content here for page 1.</p>
+            </div>
+        </div>
+
+        <!-- Page 2 -->
+        <div class="quiz-page" data-page="2">
+            <h2>Page 2</h2>
+            <div class="quiz-content">
+                <p>Add your content here for page 2.</p>
+            </div>
+        </div>
+
+        <!-- Page 3 -->
+        <div class="quiz-page" data-page="3">
+            <h2>Page 3</h2>
+            <div class="quiz-content">
+                <p>Add your content here for page 3.</p>
+            </div>
+        </div>
+
+        <!-- Page 4 -->
+        <div class="quiz-page" data-page="4">
+            <h2>Page 4</h2>
+            <div class="quiz-content">
+                <p>Add your content here for page 4.</p>
+            </div>
+        </div>
+
+        <!-- Page 5 -->
+        <div class="quiz-page" data-page="5">
+            <h2>Page 5</h2>
+            <div class="quiz-content">
+                <p>Add your content here for page 5.</p>
+            </div>
+        </div>
+
+        <!-- Page 6 -->
+        <div class="quiz-page" data-page="6">
+            <h2>Page 6</h2>
+            <div class="quiz-content">
+                <p>Add your content here for page 6.</p>
+            </div>
+        </div>
+
+        <!-- Page 7 -->
+        <div class="quiz-page" data-page="7">
+            <h2>Page 7</h2>
+            <div class="quiz-content">
+                <p>Add your content here for page 7.</p>
+            </div>
+        </div>
+
+        <!-- Page 8 -->
+        <div class="quiz-page" data-page="8">
+            <h2>Page 8</h2>
+            <div class="quiz-content">
+                <p>Add your content here for page 8.</p>
+            </div>
+        </div>
+
+        <!-- Page 9 -->
+        <div class="quiz-page" data-page="9">
+            <h2>Page 9</h2>
+            <div class="quiz-content">
+                <p>Add your content here for page 9.</p>
+            </div>
+        </div>
+
+        <!-- Page 10 -->
+        <div class="quiz-page" data-page="10">
+            <h2>Page 10</h2>
+            <div class="quiz-content">
+                <p>Add your content here for page 10.</p>
+            </div>
+        </div>
+
+        <!-- Page 11 -->
+        <div class="quiz-page" data-page="11">
+            <h2>Page 11</h2>
+            <div class="quiz-content">
+                <p>Add your content here for page 11.</p>
+            </div>
+        </div>
+
+        <!-- Page 12 -->
+        <div class="quiz-page" data-page="12">
+            <h2>Page 12</h2>
+            <div class="quiz-content">
+                <p>Add your content here for page 12.</p>
+            </div>
+        </div>
+
+        <div class="quiz-navigation">
+            <button class="quiz-button" id="prevBtn" onclick="changePage(-1)">← Previous</button>
+            <span class="page-indicator">
+                Page <span id="currentPage">1</span> of 12
+            </span>
+            <button class="quiz-button" id="nextBtn" onclick="changePage(1)">Next →</button>
+        </div>
+    </div>
+
+    <a href="index.html" style="display: inline-block; margin-top: 40px; margin-left: 80px; margin-bottom: 40px; padding: 10px 20px; border: 4px solid #000; background: #fff; font-size: 1rem; text-decoration: none; color: #000;">← Back</a>
+
+    <script>
+        let currentPageNum = 1;
+        const totalPages = 12;
+
+        function showPage(pageNum) {
+            // Hide all pages
+            const pages = document.querySelectorAll('.quiz-page');
+            pages.forEach(page => page.classList.remove('active'));
+
+            // Show current page
+            const currentPage = document.querySelector(`.quiz-page[data-page="${pageNum}"]`);
+            if (currentPage) {
+                currentPage.classList.add('active');
+            }
+
+            // Update page indicator
+            document.getElementById('currentPage').textContent = pageNum;
+
+            // Update button states
+            document.getElementById('prevBtn').disabled = pageNum === 1;
+            document.getElementById('nextBtn').disabled = pageNum === totalPages;
+        }
+
+        function changePage(direction) {
+            currentPageNum += direction;
+            if (currentPageNum < 1) currentPageNum = 1;
+            if (currentPageNum > totalPages) currentPageNum = totalPages;
+            showPage(currentPageNum);
+        }
+
+        // Initialize
+        showPage(1);
+    </script>
+</body>
+</html>
