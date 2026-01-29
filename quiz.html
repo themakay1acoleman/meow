@@ -114,7 +114,7 @@
         <div class="quiz-page" data-page="3">
             <h2>Question 2</h2>
             <div class="quiz-content">
-                <p>What is Makayla's favorite food?</p>
+                <p>What is makayla's favorite food?</p>
                 <button id="mac-btn" class="quiz-button" style="margin-right: 16px;">mac and cheese</button>
                 <button id="burgers-btn" class="quiz-button">burgers</button>
                 <div id="answer-feedback-3" style="margin-top: 10px; font-size: 1.1rem;"></div>
@@ -125,7 +125,7 @@
         <div class="quiz-page" data-page="4">
             <h2>Question 3</h2>
             <div class="quiz-content">
-                <p>Who is Makayla's favorite person ever?</p>
+                <p>Who is makayla's favorite person ever?</p>
                 <button id="cardan-btn" class="quiz-button" style="margin-right: 16px;">cardan greenbriar</button>
                 <button id="allen-btn" class="quiz-button" style="margin-right: 16px;">allen jue</button>
                 <button id="jimin-btn" class="quiz-button">jimin from bts</button>
@@ -146,39 +146,54 @@
 
         <!-- Page 6 -->
         <div class="quiz-page" data-page="6">
-            <h2>Page 6</h2>
+            <h2>Question 5</h2>
             <div class="quiz-content">
-                <p>Add your content here for page 6.</p>
+                <p>Who is the most beautiful, generous, sweet, cute, and sexy girl in the world?</p>
+                <p>Hint: she's your favorite girl ever</p>
+                <input id="free-response-6" type="text" style="width: 120px; font-size: 1rem; font-family: 'VT323', monospace; border: 2px solid #000; border-radius: 8px; margin-top: 10px; padding: 4px; text-align: center;" placeholder="type answer here">
+                <button id="check-answer-6" class="quiz-button" style="margin-left: 10px;">Check Answer</button>
+                <div id="answer-feedback-6" style="margin-top: 10px; font-size: 1.1rem;"></div>
             </div>
         </div>
 
         <!-- Page 7 -->
         <div class="quiz-page" data-page="7">
-            <h2>Page 7</h2>
+            <h2>Question 6</h2>
             <div class="quiz-content">
-                <p>Add your content here for page 7.</p>
+                <p>Do you love momo?</p>
+                <button id="yes-btn-1" class="quiz-button" style="margin-right: 16px;">yes</button>
+                <button id="yes-btn-2" class="quiz-button">yes</button>
+                <div id="answer-feedback-7" style="margin-top: 10px; font-size: 1.1rem;"></div>
             </div>
         </div>
 
         <!-- Page 8 -->
         <div class="quiz-page" data-page="8">
-            <h2>Page 8</h2>
+            <h2>Question 7</h2>
             <div class="quiz-content">
-                <p>Add your content here for page 8.</p>
+                <p>Does momo love you?</p>
+                <button id="ofcourse-btn" class="quiz-button" style="margin-right: 16px;">of course!</button>
+                <button id="sosomuch-btn" class="quiz-button">so so much</button>
+                <div id="answer-feedback-8" style="margin-top: 10px; font-size: 1.1rem;"></div>
             </div>
         </div>
 
         <!-- Page 9 -->
         <div class="quiz-page" data-page="9">
-            <h2>Page 9</h2>
+            <h2>Question 8</h2>
             <div class="quiz-content">
-                <p>Add your content here for page 9.</p>
+                <p>What is makayla's favorite season?</p>
+                <button id="winter-btn" class="quiz-button" style="margin-right: 10px;">winter</button>
+                <button id="spring-btn" class="quiz-button" style="margin-right: 10px;">spring</button>
+                <button id="summer-btn" class="quiz-button" style="margin-right: 10px;">summer</button>
+                <button id="fall-btn" class="quiz-button">fall</button>
+                <div id="answer-feedback-9" style="margin-top: 10px; font-size: 1.1rem;"></div>
             </div>
         </div>
 
         <!-- Page 10 -->
         <div class="quiz-page" data-page="10">
-            <h2>Page 10</h2>
+            <h2>Question 9</h2>
             <div class="quiz-content">
                 <p>Add your content here for page 10.</p>
             </div>
@@ -186,7 +201,7 @@
 
         <!-- Page 11 -->
         <div class="quiz-page" data-page="11">
-            <h2>Page 11</h2>
+            <h2>Question 10</h2>
             <div class="quiz-content">
                 <p>Add your content here for page 11.</p>
             </div>
@@ -393,6 +408,85 @@
                 const nextBtn = document.getElementById('nextBtn');
                 if (nextBtn && currentPageNum === 5) nextBtn.style.display = 'none';
             });
+        }
+
+        // Page 6 logic
+        const checkBtn6 = document.getElementById('check-answer-6');
+        const freeResponse6 = document.getElementById('free-response-6');
+        const feedback6 = document.getElementById('answer-feedback-6');
+        if (checkBtn6 && freeResponse6 && feedback6) {
+            checkBtn6.addEventListener('click', function() {
+                const userInput = freeResponse6.value.trim();
+                const nextBtn = document.getElementById('nextBtn');
+                if (["Makayla", "makayla", "momo", "muzzy", "Momo", "Muzzy"].includes(userInput)) {
+                    feedback6.textContent = 'Correct! 🎉';
+                    feedback6.style.color = '#28a745';
+                    if (nextBtn && currentPageNum === 6) nextBtn.style.display = '';
+                } else {
+                    feedback6.textContent = 'Try again!';
+                    feedback6.style.color = '#d00';
+                    if (nextBtn && currentPageNum === 6) nextBtn.style.display = 'none';
+                }
+            });
+            freeResponse6.addEventListener('input', function() {
+                const nextBtn = document.getElementById('nextBtn');
+                if (nextBtn && currentPageNum === 6) nextBtn.style.display = 'none';
+            });
+        }
+
+        // Page 7 logic
+        const yesBtn1 = document.getElementById('yes-btn-1');
+        const yesBtn2 = document.getElementById('yes-btn-2');
+        const feedback7 = document.getElementById('answer-feedback-7');
+        if (yesBtn1 && yesBtn2 && feedback7) {
+            function handleYesClick() {
+                feedback7.textContent = 'Correct! 🎉';
+                feedback7.style.color = '#28a745';
+                const nextBtn = document.getElementById('nextBtn');
+                if (nextBtn && currentPageNum === 7) nextBtn.style.display = '';
+            }
+            yesBtn1.addEventListener('click', handleYesClick);
+            yesBtn2.addEventListener('click', handleYesClick);
+        }
+
+        // Page 8 logic
+        const ofcourseBtn = document.getElementById('ofcourse-btn');
+        const sosomuchBtn = document.getElementById('sosomuch-btn');
+        const feedback8 = document.getElementById('answer-feedback-8');
+        if (ofcourseBtn && sosomuchBtn && feedback8) {
+            function handleLoveClick() {
+                feedback8.textContent = 'Correct! 🎉';
+                feedback8.style.color = '#28a745';
+                const nextBtn = document.getElementById('nextBtn');
+                if (nextBtn && currentPageNum === 8) nextBtn.style.display = '';
+            }
+            ofcourseBtn.addEventListener('click', handleLoveClick);
+            sosomuchBtn.addEventListener('click', handleLoveClick);
+        }
+
+        // Page 9 logic
+        const winterBtn = document.getElementById('winter-btn');
+        const springBtn = document.getElementById('spring-btn');
+        const summerBtn = document.getElementById('summer-btn');
+        const fallBtn = document.getElementById('fall-btn');
+        const feedback9 = document.getElementById('answer-feedback-9');
+        if (winterBtn && springBtn && summerBtn && fallBtn && feedback9) {
+            function handleWrong() {
+                feedback9.textContent = 'Try again!';
+                feedback9.style.color = '#d00';
+                const nextBtn = document.getElementById('nextBtn');
+                if (nextBtn && currentPageNum === 9) nextBtn.style.display = 'none';
+            }
+            function handleCorrect() {
+                feedback9.textContent = 'Correct! 🎉';
+                feedback9.style.color = '#28a745';
+                const nextBtn = document.getElementById('nextBtn');
+                if (nextBtn && currentPageNum === 9) nextBtn.style.display = '';
+            }
+            winterBtn.addEventListener('click', handleWrong);
+            springBtn.addEventListener('click', handleWrong);
+            summerBtn.addEventListener('click', handleCorrect);
+            fallBtn.addEventListener('click', handleCorrect);
         }
     </script>
 </body>
