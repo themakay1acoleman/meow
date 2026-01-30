@@ -392,9 +392,14 @@
         const feedback5 = document.getElementById('answer-feedback-5');
         if (checkBtn5 && freeResponse5 && feedback5) {
             checkBtn5.addEventListener('click', function() {
-                const userInput = freeResponse5.value.trim();
+                const userInput = freeResponse5.value.trim().toLowerCase();
                 const nextBtn = document.getElementById('nextBtn');
-                if (userInput === '17', 'seventeen', 'Seventeen', '17th', 'the seventeenth', 'the 17th') {
+                const correctAnswers = [
+                    "17", "seventeen", "17th", "seventeenth", "17th", "the seventeenth", "the 17th"
+                ];
+                // Also accept capitalized versions
+                if (correctAnswers.includes(userInput) ||
+                    correctAnswers.includes(userInput.replace(/^the /, 'the ').replace(/^(the )?/, '').replace(/th$/, 'th'))) {
                     feedback5.textContent = 'Correct! 🎉';
                     feedback5.style.color = '#28a745';
                     if (nextBtn && currentPageNum === 5) nextBtn.style.display = '';
