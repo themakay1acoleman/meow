@@ -24,6 +24,9 @@ const Main = () => {
             case '/love':
                 left = <p>i am so lucky to have met you and to have you in my life</p>;
                 break;
+            case '/2nd':
+                left = <p>i am so lucky to have met you and to have you in my life</p>;
+                break;
             case '/you':
                 left = <p>it's been a joy getting to know you, and i find more that i love about you every moment we spend together</p>;
                 break;
@@ -58,7 +61,7 @@ const Main = () => {
 
     const leftButtons = [
         { label: 'I', path: '/main' },
-        { label: 'LOVE', path: '/love' },
+        { label: 'LOVE', path: '/2nd' },
         { label: 'YOU', path: '/you' }
     ];
     const rightButtons = [

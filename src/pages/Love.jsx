@@ -65,9 +65,9 @@ const Love = () => {
             <Link to="/main" style={{ display: 'inline-block', margin: '40px 0 0 80px', padding: '10px 20px', border: '4px solid #000', background: '#fff', fontSize: '1rem', textDecoration: 'none', color: '#000', position: 'relative', zIndex: 20 }}>← Back</Link>
 
             <div style={{ textAlign: 'center', margin: '40px 0', position: 'relative', zIndex: 10 }}>
-                <a href="/quiz.html"> {/* Keeping as a tag if quiz.html exists, or Link if migrated */}
+                <Link to="/quiz">
                     <img src="/kitty.png" alt="Kitty" style={{ width: '200px', height: 'auto', cursor: 'pointer' }} />
-                </a>
+                </Link>
             </div>
         </div>
     );
