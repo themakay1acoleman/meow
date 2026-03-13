@@ -293,13 +293,48 @@ const Quiz = () => {
                         </div>
                     </>
                 );
-            // Handling placeholders 10-11
+            case 10:
+                return (
+                    <>
+                        <h2>Question 9</h2>
+                        <div className="quiz-content">
+                            <p>Where did we eat on our first date?</p>
+                            <input
+                                type="text"
+                                style={{ width: '220px', fontSize: '1rem', fontFamily: "'VT323', monospace", border: '2px solid #000', borderRadius: '8px', marginTop: '10px', padding: '4px', textAlign: 'center' }}
+                                placeholder="Type your answer here..."
+                                value={userInput}
+                                onChange={handleInputChange}
+                            />
+                            <button
+                                className="quiz-button"
+                                style={{ marginLeft: '10px' }}
+                                onClick={() => handleFreeResponseCheck(["hwasan", "Hwasan", "cafe hwasan", "Cafe Hwasan", "Cafe hwasan"])}
+                            >Check Answer</button>
+                            <div style={{ marginTop: '10px', fontSize: '1.1rem', color: feedback.color }}>{feedback.text}</div>
+                        </div>
+                    </>
+                );
+            case 11:
+                return (
+                    <>
+                        <h2>Question 10</h2>
+                        <div className="quiz-content">
+                            <p>What movie did we watch on our second date?</p>
+                            <button className="quiz-button" style={{ marginRight: '10px' }} onClick={() => handleCheckAnswer('Zootopia 2', 'sinners')}>Zootopia 2</button>
+                            <button className="quiz-button" style={{ marginRight: '10px' }} onClick={() => handleCheckAnswer('One Battle After Another', 'sinners')}>One Battle After Another</button>
+                            <button className="quiz-button" style={{ marginRight: '10px' }} onClick={() => handleCheckAnswer('Nirvana: The Band the show the movie', 'sinners')}>Nirvana: The Band the show the movie</button>
+                            <button className="quiz-button" style={{ marginTop: '16px' }} onClick={() => handleCheckAnswer('Sinners', 'sinners')}>Sinners</button>
+                            <div style={{ marginTop: '10px', fontSize: '1.1rem', color: feedback.color }}>{feedback.text}</div>
+                        </div>
+                    </>
+                );
             default:
                 return (
                     <>
                         <h2>{currentPage === 12 ? 'The End!' : `Question ${currentPage - 1}`}</h2>
                         <div className="quiz-content">
-                            <p>{currentPage === 12 ? "You finished the quiz! I love you so much! <3" : `Add your content here for page ${currentPage}.`}</p>
+                            <p>{currentPage === 12 ? "yayayayay good job! you've successfully completed my quiz for you and proven your love. this has been so fun for me to make and hopefully fun for you to complete. thank you for loving me. I love you so much and you make my heart feel so full! tysm for completing this quiz my love <3 meow!" : `Add your content here for page ${currentPage}.`}</p>
                             {currentPage === 12 && (
                                 <Link to="/main" style={{ display: 'inline-block', marginTop: '20px', padding: '10px 20px', border: '4px solid #000', background: '#fff', fontSize: '1rem', textDecoration: 'none', color: '#000' }}>Back to Main</Link>
                             )}
