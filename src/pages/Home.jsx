@@ -6,7 +6,7 @@ const Home = () => {
         <div style={{
             background: `url('${import.meta.env.BASE_URL}background.png') center/cover no-repeat fixed`,
             height: '100vh',
-            width: '100vw',
+            width: '100%',
             position: 'fixed',
             top: 0,
             left: 0,

@@ -389,7 +389,14 @@ h1 {
 
     .tagline {
         font-size: 0.9rem;
-        bottom: -12px;
+        bottom: -15px;
+        left: 0;
+        right: 0;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        text-align: center;
+        transform: none; /* Remove transform which pushed it too far right on some phone scales */
     }
 
     .star {
@@ -426,27 +433,80 @@ h1 {
     }
 
     /* Message box - make responsive */
-    div[style*="position: absolute"][style*="background: #ffe6f0"] {
+    .message-box-container {
         position: relative !important;
         width: 95% !important;
+        max-width: 400px;
         margin: 15px auto !important;
         left: auto !important;
         right: auto !important;
         top: auto !important;
         min-height: auto !important;
-        padding: 15px !important;
+        padding: 0 !important;
     }
 
-    div[style*="position: absolute"][style*="background: #ffe6f0"] p {
+    .message-box-container p {
         font-size: 0.9rem !important;
     }
 
-    div[style*="position: absolute"][style*="background: #ffe6f0"] p:first-child {
+    .message-box-container p:first-child {
         font-size: 1.1rem !important;
     }
 
+    /* Love page responsive overrides */
+    header[style*="width: 50%"] {
+        width: 95% !important;
+        padding: 10px !important;
+    }
+
+    header[style*="width: 50%"] > div {
+        justify-content: center !important;
+        gap: 10px !important;
+    }
+
+    header[style*="width: 50%"] h1 {
+        font-size: 1.5rem !important;
+    }
+
+    header[style*="width: 50%"] img {
+        width: 40px !important;
+    }
+
+    div[style*="width: 48%"] {
+        width: 100% !important;
+        margin-bottom: 20px !important;
+    }
+
+    div[style*="flexWrap: 'wrap'"] {
+        flex-direction: column !important;
+    }
+
+    div[style*="position: absolute"][style*="bottom: 100%"] {
+        position: relative !important;
+        bottom: auto !important;
+        right: auto !important;
+        text-align: center !important;
+        margin-bottom: -15px !important;
+    }
+    
+    div[style*="position: absolute"][style*="bottom: 100%"] img {
+        margin-bottom: 0 !important;
+        transform: translateY(15px) !important; /* Move gif lower */
+        width: 100px !important; /* Make it smaller */
+    }
+
+    /* Love text boxes should be smaller on mobile */
+    .love-text-box, .love-text-box p {
+        font-size: 0.95rem !important;
+        line-height: 1.5 !important;
+    }
+    
+    .love-text-box {
+        padding: 20px 15px !important;
+    }
+
     /* Kitty gif - hide or reposition on mobile */
-    img[src="kitty2.gif"] {
+    img[src$="kitty2.gif"] {
         position: relative !important;
         display: block;
         margin: 15px auto !important;
@@ -474,28 +534,31 @@ h1 {
         left: auto !important;
         transform: none !important;
         margin: 30px auto !important;
-        flex-direction: column !important;
-        gap: 15px !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 10px !important;
         width: 95% !important;
     }
 
-    .heart-image img[src="heart.png"] {
-        max-width: 250px !important;
+    .heart-image img[src$="heart.png"] {
+        max-width: 100px !important;
     }
 
     .heart-image > div {
         transform: none !important;
-        width: 180px !important;
-        height: 130px !important;
-        margin: 0 auto !important;
+        width: 100px !important;
+        height: 75px !important;
+        margin: 0 0 0 -10px !important; /* Move box left */
     }
 
     .heart-image > div img {
-        height: 130px !important;
+        height: 75px !important;
     }
 
     .heart-image > div span {
-        font-size: 0.9rem !important;
+        font-size: 0.55rem !important; /* Smaller text */
+        top: 60% !important; /* Shift text down inside the bubble */
     }
 
     /* Cinnamoroll gif */
