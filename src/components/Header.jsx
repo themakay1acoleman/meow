@@ -6,7 +6,7 @@ const Header = ({ title = "M E O W" }) => {
             <span className="to-my-love">to my love</span>
             <div className="header-inner-box">
                 <div className="header-content">
-                    <img src="/cupid1.png" alt="cupid" className="header-cupid" />
+                    <img src={`${import.meta.env.BASE_URL}cupid1.png`} alt="cupid" className="header-cupid" />
                     <div>
                         <h1>
                             <span className="star">♥</span>
@@ -15,7 +15,7 @@ const Header = ({ title = "M E O W" }) => {
                         </h1>
                         <p className="tagline">~ for allen ~</p>
                     </div>
-                    <img src="/cupid1.png" alt="cupid" className="header-cupid" />
+                    <img src={`${import.meta.env.BASE_URL}cupid1.png`} alt="cupid" className="header-cupid" />
                 </div>
             </div>
         </header>
