@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const Home = () => {
     return (
         <div style={{
-            background: "url('/background.png') center/cover no-repeat fixed",
+            background: `url('${import.meta.env.BASE_URL}background.png') center/cover no-repeat fixed`,
             height: '100vh',
             width: '100vw',
             position: 'fixed',
